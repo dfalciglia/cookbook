@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- Note that this file is refreshed by the server every 60seconds, as specified in web.xml -->
+
+<log4j:configuration debug="true">
+
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{hh:mm:ss:sss}] [%5p] [%c{3}]: %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="FILE" class="org.apache.log4j.FileAppender">
+		<param name="File" value="test.log"/>
+		<param name="Threshold" value="DEBUG"/>
+		<param name="Append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{hh:mm:ss:sss} [%5p] [%c] - %m%n" />
+		</layout>
+	</appender>
+
+     <root>
+     	<priority value="info" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+     </root>
+     
+</log4j:configuration>
