@@ -1,0 +1,8 @@
+<div id="receipts" ng-controller="ReceiptsListCtrl">
+	<ul>
+		<li	ng-repeat="receipt in receipts | filter:$parent.data.query | orderBy:orderProp ">
+			<a href="#/receipt/{{receipt.id}}"><img alt="{{category.name}}"
+				ng-src="./rest/receipts/image/{{receipt.id}}" /> {{receipt.name}}</a>
+		</li>
+	</ul>
+</div>

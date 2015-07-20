@@ -1,0 +1,21 @@
+<div ng-controller="ReceiptCtrl">
+	<div id="receiptHeader">
+		<img alt="{{category.name}}"
+			ng-src="./rest/receipts/image/{{receipt.id}}" height="100%" />
+		<h2>{{receipt.name}}</h2>
+		<div id="headerInfo">
+			<span>Tempo preparazione: {{receipt.preparationTime}}</span> <span>Tempo
+				cottura: {{receipt.cookingTime}}</span> <span>Difficoltà:
+				{{receipt.difficulties}}</span> <span>Voto: {{receipt.vote}}</span>
+		</div>
+	</div>
+
+	<div id="ingredients">
+		<h3>Ingredienti (per {{receipt.personNumber}} persone):</h3>
+		<ul>
+			<li ng-repeat="ingredient in receipt.ingredients">{{ingredient}}</li>
+		</ul>
+	</div>
+	
+	<div id ="preparation">{{receipt.preparation}}</div>
+</div>

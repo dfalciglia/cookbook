@@ -1,0 +1,14 @@
+<div ng-controller="CategoriesListCtrl">
+
+	<div id="search">
+		Search: <input ng-model="$parent.data.query" ng-change="change()">
+	</div>
+
+
+	<ul>
+		<li ng-repeat="category in categories"><img
+			alt="{{category.name}}"
+			ng-src="./rest/categories/image/{{category.id}}" height="36px"
+			width="36px" /> <a href="#/receipts/{{category.id}}">{{category.name}} ({{category.numReceipts}})</a></li>
+	</ul>
+</div>
