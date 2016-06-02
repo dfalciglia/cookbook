@@ -8,6 +8,7 @@
 	<modules>
 		<module>cookbook-model</module>
 		<module>cookbook-services</module>
+    <module>cookbook-web</module>
   </modules>
 
 	<build>

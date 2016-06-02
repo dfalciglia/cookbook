@@ -22,7 +22,7 @@ cookbookControllers.controller('CategoriesListCtrl', [
 				$scope.$parent.query = $scope.query;
 				$http.get('rest/categories/findByReceiptName/' + $scope.data.query)
 						.success(function(data) {
-							$scope.categories = data;
+							$scope.categories = data._embedded.categories;
 						});
 			};
 
@@ -38,7 +38,7 @@ cookbookControllers.controller('ReceiptsListCtrl', [
 		function($scope, $routeParams, $http) {
 			$http.get('rest/receipts/listAll/' + $routeParams.categoryId)
 					.success(function(data) {
-						$scope.receipts = data;
+						$scope.receipts = data._embedded.receipts;
 					});
 			$scope.orderProp = 'name';
 		} ]);
@@ -50,6 +50,6 @@ cookbookControllers.controller('ReceiptCtrl', [
 		function($scope, $routeParams, $http) {
 			$http.get('rest/receipts/' + $routeParams.categoryId).success(
 					function(data) {
-						$scope.receipt = data;
+						$scope.receipt = data._embedded.receipts;
 					});
 		} ]);
